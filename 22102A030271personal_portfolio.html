@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            color: #666;
+        }
+
+        form {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Projects section styling */
+        .project-item {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Personal Portfolio</h1>
+
+    <h2>About</h2>
+    <form>
+        <label for="full-name">Enter your full name:</label>
+        <input type="text" id="full-name" name="full-name">
+
+        <label for="age">Enter your age:</label>
+        <input type="date" id="age" name="age">
+
+        <label for="contact-number">Enter your contact number:</label>
+        <input type="number" id="contact-number" name="contact-number">
+    </form>
+
+    <h2>Projects</h2>
+    <form id="projectForm">
+        <div id="projectList">
+            </div>
+        <button type="button" onclick="addProject()">Add Project</button>
+    </form>
+
+    <script>
+        function addProject() {
+            const projectList = document.getElementById('projectList');
+            const projectItem = document.createElement('div');
+            projectItem.classList.add('project-item');
+            projectItem.innerHTML = `
+                <label for="project-name">Project name:</label>
+                <input type="text" name="project-name">
+                <label for="project-duration">Project duration:</label>
+                <input type="text" name="project-duration">
+            `;
+            projectList.appendChild(projectItem);
+        }
+    </script>
+</body>
+</html>
